@@ -1,0 +1,1190 @@
+{
+  "info": {
+    "name": "API Routes Collection",
+    "description": "Collection of API endpoints for the application with authentication",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Appointments",
+      "item": [
+        {
+          "name": "Create Appointment",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"title\": \"Appointment Title\",\n  \"date\": \"2023-10-01\",\n  \"startTime\": \"10:00\",\n  \"duration\": \"1h\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/appointments",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "appointments"]
+            }
+          }
+        },
+        {
+          "name": "Get All Appointments",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/api/appointments",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "appointments"]
+            }
+          }
+        },
+        {
+          "name": "Get Appointment by ID",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/api/appointments/:id",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "appointments", ":id"]
+            }
+          }
+        },
+        {
+          "name": "Update Appointment",
+          "request": {
+            "method": "PUT",
+            "url": {
+              "raw": "{{baseUrl}}/api/appointments/:id",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "appointments", ":id"]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"title\": \"Updated Appointment Title\"\n}"
+            }
+          }
+        },
+        {
+          "name": "Delete Appointment",
+          "request": {
+            "method": "DELETE",
+            "url": {
+              "raw": "{{baseUrl}}/api/appointments/:id",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "appointments", ":id"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Contacts",
+      "item": [
+        {
+          "name": "Create Contact",
+          "request": {
+            "method": "POST",
+            "url": {
+              "raw": "{{baseUrl}}/api/contacts",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "contacts"]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Contact Name\",\n  \"email\": \"contact@example.com\"\n}"
+            }
+          }
+        },
+        {
+          "name": "Get All Contacts",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/api/contacts",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "contacts"]
+            }
+          }
+        },
+        {
+          "name": "Get Contact by ID",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/api/contacts/:id",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "contacts", ":id"]
+            }
+          }
+        },
+        {
+          "name": "Delete Contact",
+          "request": {
+            "method": "DELETE",
+            "url": {
+              "raw": "{{baseUrl}}/api/contacts/:id",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "contacts", ":id"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Companies",
+      "item": [
+        {
+          "name": "Create Company",
+          "request": {
+            "method": "POST",
+            "url": {
+              "raw": "{{baseUrl}}/api/companies",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "companies"]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Company Name\"\n}"
+            }
+          }
+        },
+        {
+          "name": "Get All Companies",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/api/companies",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "companies"]
+            }
+          }
+        },
+        {
+          "name": "Get Company by ID",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/api/companies/:id",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "companies", ":id"]
+            }
+          }
+        },
+        {
+          "name": "Delete Company",
+          "request": {
+            "method": "DELETE",
+            "url": {
+              "raw": "{{baseUrl}}/api/companies/:id",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "companies", ":id"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Tasks",
+      "item": [
+        {
+          "name": "Create Task",
+          "request": {
+            "method": "POST",
+            "url": {
+              "raw": "{{baseUrl}}/api/tasks",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "tasks"]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"title\": \"Task Title\",\n  \"description\": \"Task Description\"\n}"
+            }
+          }
+        },
+        {
+          "name": "Get All Tasks",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/api/tasks",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "tasks"]
+            }
+          }
+        },
+        {
+          "name": "Get Task by ID",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/api/tasks/:id",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "tasks", ":id"]
+            }
+          }
+        },
+        {
+          "name": "Update Task",
+          "request": {
+            "method": "PUT",
+            "url": {
+              "raw": "{{baseUrl}}/api/tasks/:id",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "tasks", ":id"]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"title\": \"Updated Task Title\"\n}"
+            }
+          }
+        },
+        {
+          "name": "Delete Task",
+          "request": {
+            "method": "DELETE",
+            "url": {
+              "raw": "{{baseUrl}}/api/tasks/:id",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "tasks", ":id"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Opportunities",
+      "item": [
+        {
+          "name": "Create Opportunity",
+          "request": {
+            "method": "POST",
+            "url": {
+              "raw": "{{baseUrl}}/api/opportunities",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "opportunities"]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"title\": \"Opportunity Title\"\n}"
+            }
+          }
+        },
+        {
+          "name": "Get All Opportunities",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/api/opportunities",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "opportunities"]
+            }
+          }
+        },
+        {
+          "name": "Get Opportunity by ID",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/api/opportunities/:id",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "opportunities", ":id"]
+            }
+          }
+        },
+        {
+          "name": "Update Opportunity",
+          "request": {
+            "method": "PUT",
+            "url": {
+              "raw": "{{baseUrl}}/api/opportunities/:id",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "opportunities", ":id"]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"title\": \"Updated Opportunity Title\"\n}"
+            }
+          }
+        },
+        {
+          "name": "Delete Opportunity",
+          "request": {
+            "method": "DELETE",
+            "url": {
+              "raw": "{{baseUrl}}/api/opportunities/:id",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "opportunities", ":id"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Pipelines",
+      "item": [
+        {
+          "name": "Create Pipeline",
+          "request": {
+            "method": "POST",
+            "url": {
+              "raw": "{{baseUrl}}/api/pipelines",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "pipelines"]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Pipeline Name\"\n}"
+            }
+          }
+        },
+        {
+          "name": "Get All Pipelines",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/api/pipelines",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "pipelines"]
+            }
+          }
+        },
+        {
+          "name": "Get Pipeline by ID",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/api/pipelines/:id",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "pipelines", ":id"]
+            }
+          }
+        },
+        {
+          "name": "Update Pipeline",
+          "request": {
+            "method": "PUT",
+            "url": {
+              "raw": "{{baseUrl}}/api/pipelines/:id",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "pipelines", ":id"]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Updated Pipeline Name\"\n}"
+            }
+          }
+        },
+        {
+          "name": "Delete Pipeline",
+          "request": {
+            "method": "DELETE",
+            "url": {
+              "raw": "{{baseUrl}}/api/pipelines/:id",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "pipelines", ":id"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Bulk Actions",
+      "item": [
+        {
+          "name": "Create Bulk Action",
+          "request": {
+            "method": "POST",
+            "url": {
+              "raw": "{{baseUrl}}/api/bulk-actions",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "bulk-actions"]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"action\": \"Bulk Action Description\"\n}"
+            }
+          }
+        },
+        {
+          "name": "Get All Bulk Actions",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/api/bulk-actions",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "bulk-actions"]
+            }
+          }
+        },
+        {
+          "name": "Get Bulk Action by ID",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/api/bulk-actions/:id",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "bulk-actions", ":id"]
+            }
+          }
+        },
+        {
+          "name": "Update Bulk Action",
+          "request": {
+            "method": "PUT",
+            "url": {
+              "raw": "{{baseUrl}}/api/bulk-actions/:id",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "bulk-actions", ":id"]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"action\": \"Updated Bulk Action Description\"\n}"
+            }
+          }
+        },
+        {
+          "name": "Delete Bulk Action",
+          "request": {
+            "method": "DELETE",
+            "url": {
+              "raw": "{{baseUrl}}/api/bulk-actions/:id",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "bulk-actions", ":id"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Import",
+      "item": [
+        {
+          "name": "Import Contacts",
+          "request": {
+            "method": "POST",
+            "url": {
+              "raw": "{{baseUrl}}/api/import",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "import"]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "[\n  { \"name\": \"Contact 1\", \"email\": \"contact1@example.com\" },\n  { \"name\": \"Contact 2\", \"email\": \"contact2@example.com\" }\n]"
+            }
+          }
+        },
+        {
+          "name": "Import Opportunities",
+          "request": {
+            "method": "POST",
+            "url": {
+              "raw": "{{baseUrl}}/api/import",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "import"]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "[\n  { \"title\": \"Opportunity 1\" },\n  { \"title\": \"Opportunity 2\" }\n]"
+            }
+          }
+        },
+        {
+          "name": "Get Import History",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/api/import/history",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "import", "history"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Meetings",
+      "item": [
+        {
+          "name": "Create Meeting",
+          "request": {
+            "method": "POST",
+            "url": {
+              "raw": "{{baseUrl}}/api/meeting",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "meeting"]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"title\": \"Meeting Title\",\n  \"date\": \"2023-10-01\",\n  \"startTime\": \"10:00\",\n  \"duration\": \"1h\"\n}"
+            }
+          }
+        },
+        {
+          "name": "Get All Meetings",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/api/meeting",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "meeting"]
+            }
+          }
+        },
+        {
+          "name": "Get Meeting by ID",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/api/meeting/:id",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "meeting", ":id"]
+            }
+          }
+        },
+        {
+          "name": "Update Meeting",
+          "request": {
+            "method": "PUT",
+            "url": {
+              "raw": "{{baseUrl}}/api/meeting/:id",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "meeting", ":id"]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"title\": \"Updated Meeting Title\"\n}"
+            }
+          }
+        },
+        {
+          "name": "Delete Meeting",
+          "request": {
+            "method": "DELETE",
+            "url": {
+              "raw": "{{baseUrl}}/api/meeting/:id",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "meeting", ":id"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Conversations",
+      "item": [
+        {
+          "name": "Create Conversation",
+          "request": {
+            "method": "POST",
+            "url": {
+              "raw": "{{baseUrl}}/api/conversations",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "conversations"]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"title\": \"Conversation Title\"\n}"
+            }
+          }
+        },
+        {
+          "name": "Get All Conversations",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/api/conversations",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "conversations"]
+            }
+          }
+        },
+        {
+          "name": "Get Conversation by ID",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/api/conversations/:id",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "conversations", ":id"]
+            }
+          }
+        },
+        {
+          "name": "Delete Conversation",
+          "request": {
+            "method": "DELETE",
+            "url": {
+              "raw": "{{baseUrl}}/api/conversations/:id",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "conversations", ":id"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Messages",
+      "item": [
+        {
+          "name": "Create Message",
+          "request": {
+            "method": "POST",
+            "url": {
+              "raw": "{{baseUrl}}/api/messages",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "messages"]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"content\": \"Hello, this is a message!\",\n  \"conversationId\": \"<conversation_id>\"\n}"
+            }
+          }
+        },
+        {
+          "name": "Get All Messages",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/api/messages",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "messages"]
+            }
+          }
+        },
+        {
+          "name": "Get Message by ID",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/api/messages/:id",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "messages", ":id"]
+            }
+          }
+        },
+        {
+          "name": "Update Message",
+          "request": {
+            "method": "PUT",
+            "url": {
+              "raw": "{{baseUrl}}/api/messages/:id",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "messages", ":id"]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"content\": \"Updated message content\"\n}"
+            }
+          }
+        },
+        {
+          "name": "Delete Message",
+          "request": {
+            "method": "DELETE",
+            "url": {
+              "raw": "{{baseUrl}}/api/messages/:id",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "messages", ":id"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Snippets",
+      "item": [
+        {
+          "name": "Create Snippet",
+          "request": {
+            "method": "POST",
+            "url": {
+              "raw": "{{baseUrl}}/api/snippets",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "snippets"]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"content\": \"Snippet content\"\n}"
+            }
+          }
+        },
+        {
+          "name": "Get All Snippets",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/api/snippets",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "snippets"]
+            }
+          }
+        },
+        {
+          "name": "Get Snippet by ID",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/api/snippets/:id",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "snippets", ":id"]
+            }
+          }
+        },
+        {
+          "name": "Update Snippet",
+          "request": {
+            "method": "PUT",
+            "url": {
+              "raw": "{{baseUrl}}/api/snippets/:id",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "snippets", ":id"]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"content\": \"Updated snippet content\"\n}"
+            }
+          }
+        },
+        {
+          "name": "Delete Snippet",
+          "request": {
+            "method": "DELETE",
+            "url": {
+              "raw": "{{baseUrl}}/api/snippets/:id",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "snippets", ":id"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Folders",
+      "item": [
+        {
+          "name": "Create Folder",
+          "request": {
+            "method": "POST",
+            "url": {
+              "raw": "{{baseUrl}}/api/folders",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "folders"]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Folder Name\"\n}"
+            }
+          }
+        },
+        {
+          "name": "Get All Folders",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/api/folders",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "folders"]
+            }
+          }
+        },
+        {
+          "name": "Get Folder by ID",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/api/folders/:id",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "folders", ":id"]
+            }
+          }
+        },
+        {
+          "name": "Update Folder",
+          "request": {
+            "method": "PUT",
+            "url": {
+              "raw": "{{baseUrl}}/api/folders/:id",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "folders", ":id"]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Updated Folder Name\"\n}"
+            }
+          }
+        },
+        {
+          "name": "Delete Folder",
+          "request": {
+            "method": "DELETE",
+            "url": {
+              "raw": "{{baseUrl}}/api/folders/:id",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "folders", ":id"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Manual Actions",
+      "item": [
+        {
+          "name": "Create Manual Action",
+          "request": {
+            "method": "POST",
+            "url": {
+              "raw": "{{baseUrl}}/api/manual-actions",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "manual-actions"]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"action\": \"Manual Action Description\"\n}"
+            }
+          }
+        },
+        {
+          "name": "Get All Manual Actions",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/api/manual-actions",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "manual-actions"]
+            }
+          }
+        },
+        {
+          "name": "Get Manual Action by ID",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/api/manual-actions/:id",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "manual-actions", ":id"]
+            }
+          }
+        },
+        {
+          "name": "Update Manual Action",
+          "request": {
+            "method": "PUT",
+            "url": {
+              "raw": "{{baseUrl}}/api/manual-actions/:id",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "manual-actions", ":id"]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"action\": \"Updated Manual Action Description\"\n}"
+            }
+          }
+        },
+        {
+          "name": "Delete Manual Action",
+          "request": {
+            "method": "DELETE",
+            "url": {
+              "raw": "{{baseUrl}}/api/manual-actions/:id",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "manual-actions", ":id"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Trigger Links",
+      "item": [
+        {
+          "name": "Create Trigger Link",
+          "request": {
+            "method": "POST",
+            "url": {
+              "raw": "{{baseUrl}}/api/trigger-links",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "trigger-links"]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"link\": \"http://example.com\"\n}"
+            }
+          }
+        },
+        {
+          "name": "Get All Trigger Links",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/api/trigger-links",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "trigger-links"]
+            }
+          }
+        },
+        {
+          "name": "Get Trigger Link by ID",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/api/trigger-links/:id",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "trigger-links", ":id"]
+            }
+          }
+        },
+        {
+          "name": "Update Trigger Link",
+          "request": {
+            "method": "PUT",
+            "url": {
+              "raw": "{{baseUrl}}/api/trigger-links/:id",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "trigger-links", ":id"]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"link\": \"http://updated-example.com\"\n}"
+            }
+          }
+        },
+        {
+          "name": "Delete Trigger Link",
+          "request": {
+            "method": "DELETE",
+            "url": {
+              "raw": "{{baseUrl}}/api/trigger-links/:id",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "trigger-links", ":id"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Business Profile",
+      "item": [
+        {
+          "name": "Create Business Profile",
+          "request": {
+            "method": "POST",
+            "url": {
+              "raw": "{{baseUrl}}/api/business-profile",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "business-profile"]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"businessName\": \"Business Name\"\n}"
+            }
+          }
+        },
+        {
+          "name": "Get Business Profile",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/api/business-profile",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "business-profile"]
+            }
+          }
+        },
+        {
+          "name": "Update Business Profile",
+          "request": {
+            "method": "PUT",
+            "url": {
+              "raw": "{{baseUrl}}/api/business-profile",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "business-profile"]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"businessName\": \"Updated Business Name\"\n}"
+            }
+          }
+        },
+        {
+          "name": "Delete Business Profile",
+          "request": {
+            "method": "DELETE",
+            "url": {
+              "raw": "{{baseUrl}}/api/business-profile",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "business-profile"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Subscribers",
+      "item": [
+        {
+          "name": "Create Subscriber",
+          "request": {
+            "method": "POST",
+            "url": {
+              "raw": "{{baseUrl}}/api/subscribers",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "subscribers"]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"email\": \"subscriber@example.com\"\n}"
+            }
+          }
+        },
+        {
+          "name": "Get All Subscribers",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/api/subscribers",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "subscribers"]
+            }
+          }
+        },
+        {
+          "name": "Get Subscriber by ID",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/api/subscribers/:id",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "subscribers", ":id"]
+            }
+          }
+        },
+        {
+          "name": "Delete Subscriber",
+          "request": {
+            "method": "DELETE",
+            "url": {
+              "raw": "{{baseUrl}}/api/subscribers/:id",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "subscribers", ":id"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Campaigns",
+      "item": [
+        {
+          "name": "Create Campaign",
+          "request": {
+            "method": "POST",
+            "url": {
+              "raw": "{{baseUrl}}/api/campaigns",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "campaigns"]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"title\": \"Campaign Title\"\n}"
+            }
+          }
+        },
+        {
+          "name": "Get All Campaigns",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/api/campaigns",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "campaigns"]
+            }
+          }
+        },
+        {
+          "name": "Get Campaign by ID",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/api/campaigns/:id",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "campaigns", ":id"]
+            }
+          }
+        },
+        {
+          "name": "Delete Campaign",
+          "request": {
+            "method": "DELETE",
+            "url": {
+              "raw": "{{baseUrl}}/api/campaigns/:id",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "campaigns", ":id"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Templates",
+      "item": [
+        {
+          "name": "Create Template",
+          "request": {
+            "method": "POST",
+            "url": {
+              "raw": "{{baseUrl}}/api/templates",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "templates"]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\nIt seems there was an issue with the JSON formatting in the Postman collection file. I will fix the errors and resave the file.
+
+### Fixes:
+1. **Unexpected end of string**: Ensure all strings are properly closed with double quotes.
+2. **Expected comma or closing brace**: Ensure all JSON objects and arrays are properly closed with `}` or `]` and separated by commas where necessary.
+
+Here is the corrected content for the Postman collection:
+
+<create_file>
+<path>Postman_Collection_Api_Routes.json</path>
+<content>
+{
+  "info": {
+    "name": "API Routes Collection",
+    "description": "Collection of API endpoints for the application with authentication",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Appointments",
+      "item": [
+        {
+          "name": "Create Appointment",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"title\": \"Appointment Title\",\n  \"date\": \"2023-10-01\",\n  \"startTime\": \"10:00\",\n  \"duration\": \"1h\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/appointments",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "appointments"]
+            }
+          }
+        },
+        {
+          "name": "Get All Appointments",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/api/appointments",
+              "host": ["{{baseUrl}}"],
+              "极path\": [\"api\", \"appointments\"]\n            }\n          }\n        },\n        {\n          \"name\": \"Get Appointment by ID\",\n          \"request\": {\n            \"method\": \"GET\",\n            \"url\": {\n              \"raw\": \"{{baseUrl}}/api/appointments/:id\",\n              \"host\": [\"{{baseUrl}}\"],\n              \"path\": [\"api\", \"appointments\", \":id\"]\n            }\n          }\n        },\n        {\n          \"name\": \"Update Appointment\",\n          \"request\": {\n            \"method\": \"PUT\",\n            \"url\": {\n              \"raw\": \"{{baseUrl}}/api/appointments/:id\",\n              \"host\": [\"{{baseUrl}}\"],\n              \"path\": [\"api\", \"appointments\", \":id\"]\n            },\n            \"body\": {\n              \"mode\": \"raw\",\n              \"raw\": \"{\\n  \\\"title\\\": \\\"Updated Appointment Title\\\"\\n}\"\n            }\n          }\n        },\n        {\n          \"name\": \"Delete Appointment\",\n          \"request\": {\n            \"method\": \"DELETE\",\n            \"url\": {\n              \"raw\": \"{{baseUrl}}/api/appointments/:id\",\n              \"host\": [\"{{baseUrl}}\"],\n              \"path\": [\"api\", \"appointments\", \":id\"]\n            }\n          }\n        }\n      ]\n    }\n  ]\n}\n"
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

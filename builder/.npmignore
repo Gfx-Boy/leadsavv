@@ -1,0 +1,11 @@
+.*
+*.log
+*.html
+**/tsconfig.json
+**/webpack.config.js
+node_modules
+public
+src
+!src/styles/main.scss
+assets
+server

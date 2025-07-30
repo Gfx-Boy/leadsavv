@@ -1,0 +1,876 @@
+/* Global Styles */
+:root {
+  --text-primary: #f3f4f6;
+  --text-secondary: #9ca3af;
+  --background: #030712;
+  --card-background: rgba(17, 24, 39, 0.7);
+  --border-color: rgba(75, 85, 99, 0.3);
+  --hover-border: rgba(139, 92, 246, 0.3);
+
+  /* Tier-specific colors */
+  --free-gradient-start: #3b82f6;
+  --free-gradient-end: #1d4ed8;
+  --free-glow: rgba(59, 130, 246, 0.15);
+
+  --lite-gradient-start: #ec4899;
+  --lite-gradient-end: #be185d;
+  --lite-glow: rgba(236, 72, 153, 0.15);
+
+  --premium-gradient-start: #8b5cf6;
+  --premium-gradient-end: #6d28d9;
+  --premium-glow: rgba(139, 92, 246, 0.15);
+
+  --enterprise-gradient-start: #10b981;
+  --enterprise-gradient-end: #059669;
+  --enterprise-glow: rgba(16, 185, 129, 0.15);
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle at center, 
+    rgba(139, 92, 246, 0.05) 0%,
+    rgba(236, 72, 153, 0.05) 25%,
+    rgba(59, 130, 246, 0.05) 50%,
+    transparent 70%);
+  animation: aurora 30s linear infinite;
+  z-index: -1;
+}
+
+@keyframes aurora {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+
+/* Header Styles */
+.pricing-header {
+  text-align: center;
+  margin-bottom: 80px;
+}
+
+.pricing-header::before {
+  content: '';
+  position: absolute;
+  top: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 200px;
+  height: 2px;
+  background: linear-gradient(90deg, 
+    transparent,
+    rgba(139, 92, 246, 0.2),
+    transparent
+  );
+}
+
+.pricing-header h1 {
+  font-size: 4rem;
+  margin-bottom: 16px;
+  color: var(--text-primary);
+  text-shadow: 0 0 20px rgba(139, 92, 246, 0.1);
+  letter-spacing: -1px;
+  background: linear-gradient(to right,
+    #f3f4f6 20%,
+    #e5e7eb 40%,
+    #d1d5db 60%,
+    #f3f4f6 80%
+  );
+  background-size: 200% auto;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shine 8s linear infinite;
+}
+
+@keyframes shine {
+  to { background-position: 200% center; }
+}
+
+.pricing-header p {
+  font-size: 1.2rem;
+  color: var(--text-secondary);
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* Pricing Container */
+.pricing-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  margin-bottom: 60px;
+  perspective: 1000px;
+}
+
+.pricing-container .enterprise {
+  grid-column: 1 / -1;
+  display: flex;
+  flex-direction: column;
+}
+
+.pricing-container .enterprise .features {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+/* Pricing Card Styles */
+.pricing-card {
+  background: var(--card-background);
+  border-radius: 24px;
+  padding: 40px;
+  backdrop-filter: blur(12px);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+  border: 1px solid var(--border-color);
+  transform-style: preserve-3d;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+              0 2px 4px -1px rgba(0, 0, 0, 0.06),
+              inset 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+
+.pricing-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 24px;
+  padding: 1px;
+  background: linear-gradient(45deg,
+    transparent,
+    rgba(139, 92, 246, 0.3),
+    transparent
+  );
+  mask: linear-gradient(#fff 0 0) content-box,
+        linear-gradient(#fff 0 0);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box,
+                linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+}
+
+/* Tier-specific styles */
+.pricing-card.free {
+  background: linear-gradient(135deg,
+    rgba(59, 130, 246, 0.1),
+    rgba(29, 78, 216, 0.1)
+  );
+}
+
+.pricing-card.free .price,
+.pricing-card.free .card-header h2 {
+  background: linear-gradient(to right, var(--free-gradient-start), var(--free-gradient-end));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.pricing-card.free .select-button {
+  background: linear-gradient(to right, var(--free-gradient-start), var(--free-gradient-end));
+  box-shadow: 0 4px 15px var(--free-glow);
+}
+
+.pricing-card.lite {
+  background: linear-gradient(135deg,
+    rgba(236, 72, 153, 0.1),
+    rgba(190, 24, 93, 0.1)
+  );
+}
+
+.pricing-card.lite .price,
+.pricing-card.lite .card-header h2 {
+  background: linear-gradient(to right, var(--lite-gradient-start), var(--lite-gradient-end));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.pricing-card.lite .select-button {
+  background: linear-gradient(to right, var(--lite-gradient-start), var(--lite-gradient-end));
+  box-shadow: 0 4px 15px var(--lite-glow);
+}
+
+.pricing-card.premium {
+  background: linear-gradient(135deg,
+    rgba(139, 92, 246, 0.1),
+    rgba(109, 40, 217, 0.1)
+  );
+  transform: scale(1.05);
+  border-color: rgba(139, 92, 246, 0.3);
+}
+
+.pricing-card.premium .price,
+.pricing-card.premium .card-header h2 {
+  background: linear-gradient(to right, var(--premium-gradient-start), var(--premium-gradient-end));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.pricing-card.premium .select-button {
+  background: linear-gradient(to right, var(--premium-gradient-start), var(--premium-gradient-end));
+  box-shadow: 0 4px 15px var(--premium-glow);
+}
+
+.pricing-card.enterprise {
+  background: linear-gradient(135deg,
+    rgba(16, 185, 129, 0.1),
+    rgba(5, 150, 105, 0.1)
+  );
+}
+
+.pricing-card.enterprise .price,
+.pricing-card.enterprise .card-header h2 {
+  background: linear-gradient(to right, var(--enterprise-gradient-start), var(--enterprise-gradient-end));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.pricing-card.enterprise .select-button {
+  background: linear-gradient(to right, var(--enterprise-gradient-start), var(--enterprise-gradient-end));
+  box-shadow: 0 4px 15px var(--enterprise-glow);
+}
+
+.pricing-card.enterprise .card-header {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  margin-bottom: 20px;
+}
+
+.pricing-card.enterprise .card-header h2,
+.pricing-card.enterprise .price {
+  margin: 0;
+}
+
+.pricing-card.enterprise .description {
+  margin: 0 0 20px 0;
+}
+
+.pricing-card:hover {
+  transform: translateY(-10px);
+  border-color: var(--hover-border);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
+              0 10px 10px -5px rgba(0, 0, 0, 0.04),
+              0 0 20px var(--hover-border);
+}
+
+.pricing-card.premium:hover {
+  transform: translateY(-10px) scale(1.05);
+}
+
+.pricing-card.enterprise:hover {
+  transform: translateY(-5px);
+}
+
+.card-header {
+  text-align: center;
+  margin-bottom: 32px;
+  position: relative;
+}
+
+.card-header::after {
+  content: '';
+  position: absolute;
+  bottom: -16px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60%;
+  height: 1px;
+  background: linear-gradient(90deg,
+    transparent,
+    var(--border-color),
+    transparent
+  );
+}
+
+.card-header h2 {
+  font-size: 2rem;
+  margin-bottom: 16px;
+  position: relative;
+  letter-spacing: -0.5px;
+}
+
+.price {
+  font-size: 4rem;
+  font-weight: bold;
+  margin-bottom: 8px;
+  line-height: 1;
+  position: relative;
+  display: inline-block;
+}
+
+.currency {
+  font-size: 2rem;
+  vertical-align: super;
+  margin-right: 4px;
+  opacity: 0.8;
+}
+
+.period {
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+  margin-left: 4px;
+}
+
+.description {
+  color: var(--text-secondary);
+  font-size: 1.1rem;
+  margin-bottom: 32px;
+  line-height: 1.6;
+}
+
+/* Features Styles */
+.features {
+  margin-bottom: 32px;
+}
+
+.feature {
+  display: flex;
+  align-items: center;
+  margin-bottom: 16px;
+  color: var(--text-secondary);
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+  padding: 12px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.feature:hover {
+  transform: translateX(8px);
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+.checkmark {
+  margin-right: 16px;
+  font-size: 1.3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.free .checkmark {
+  color: var(--free-gradient-start);
+  text-shadow: 0 0 10px var(--free-gradient-start);
+}
+
+.lite .checkmark {
+  color: var(--lite-gradient-start);
+  text-shadow: 0 0 10px var(--lite-gradient-start);
+}
+
+.premium .checkmark {
+  color: var(--premium-gradient-start);
+  text-shadow: 0 0 10px var(--premium-gradient-start);
+}
+
+.enterprise .checkmark {
+  color: var(--enterprise-gradient-start);
+  text-shadow: 0 0 10px var(--enterprise-gradient-start);
+}
+
+/* Button Styles */
+.select-button {
+  width: 100%;
+  padding: 16px;
+  border: none;
+  border-radius: 12px;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  font-size: 1.1rem;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.select-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(120deg,
+    transparent,
+    rgba(255, 255, 255, 0.2),
+    transparent
+  );
+  transition: 0.6s;
+}
+
+.select-button:hover::before {
+  left: 100%;
+}
+
+.select-button:hover {
+  transform: translateY(-2px);
+}
+
+/* Contact Section */
+.contact-section {
+  text-align: center;
+  margin-top: 80px;
+  padding: 60px 40px;
+  background: var(--card-background);
+  border-radius: 24px;
+  border: 1px solid var(--border-color);
+  backdrop-filter: blur(12px);
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+              0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.contact-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(45deg,
+    transparent,
+    rgba(139, 92, 246, 0.1),
+    transparent
+  );
+  animation: shine 3s infinite;
+}
+
+.contact-section h2 {
+  margin-bottom: 20px;
+  font-size: 2.5rem;
+  background: linear-gradient(to right, var(--premium-gradient-start), var(--premium-gradient-end));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  position: relative;
+}
+
+.contact-section h2::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 2px;
+  background: linear-gradient(to right, var(--premium-gradient-start), var(--premium-gradient-end));
+}
+
+.contact-section p {
+  color: var(--text-secondary);
+  margin-bottom: 32px;
+  font-size: 1.2rem;
+  line-height: 1.6;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.contact-button {
+  padding: 16px 40px;
+  background: transparent;
+  border: 2px solid var(--premium-gradient-start);
+  color: var(--premium-gradient-start);
+  border-radius: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.contact-button:hover {
+  background: linear-gradient(to right, var(--premium-gradient-start), var(--premium-gradient-end));
+  border-color: transparent;
+  color: white;
+  box-shadow: 0 0 30px var(--premium-glow);
+  transform: translateY(-2px);
+}
+
+/* Modal Styles */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(3, 7, 18, 0.9);
+  backdrop-filter: blur(8px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.modal-content {
+  background: var(--card-background);
+  border-radius: 24px;
+  padding: 48px;
+  max-width: 600px;
+  width: 90%;
+  position: relative;
+  animation: modalSlideIn 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  border: 1px solid var(--border-color);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+}
+
+.modal-content.free { 
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25),
+              0 0 40px var(--free-glow);
+}
+.modal-content.lite { 
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25),
+              0 0 40px var(--lite-glow);
+}
+.modal-content.premium { 
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25),
+              0 0 40px var(--premium-glow);
+}
+.modal-content.enterprise { 
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25),
+              0 0 40px var(--enterprise-glow);
+}
+
+@keyframes modalSlideIn {
+  from {
+    transform: translateY(30px) scale(0.95);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+}
+
+.close-button {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--border-color);
+  font-size: 28px;
+  cursor: pointer;
+  color: var(--text-secondary);
+  transition: all 0.3s ease;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(4px);
+}
+
+.close-button:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--text-primary);
+  transform: rotate(90deg);
+  border-color: var(--hover-border);
+}
+
+.modal-header {
+  text-align: center;
+  margin-bottom: 40px;
+  position: relative;
+}
+
+.modal-header::after {
+  content: '';
+  position: absolute;
+  bottom: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 1px;
+  background: linear-gradient(90deg,
+    transparent,
+    var(--border-color),
+    transparent
+  );
+}
+
+.modal-header h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  letter-spacing: -0.5px;
+}
+
+.modal-price {
+  font-size: 4.5rem;
+  font-weight: bold;
+  line-height: 1;
+  margin-bottom: 20px;
+  position: relative;
+  display: inline-block;
+}
+
+.modal-features {
+  margin-bottom: 40px;
+  background: rgba(255, 255, 255, 0.02);
+  padding: 32px;
+  border-radius: 16px;
+  backdrop-filter: blur(4px);
+  border: 1px solid var(--border-color);
+}
+
+.modal-features h3 {
+  margin-bottom: 24px;
+  color: var(--text-primary);
+  font-size: 1.5rem;
+  text-align: center;
+  position: relative;
+}
+
+.modal-features h3::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 1px;
+  background: var(--border-color);
+}
+
+.modal-feature {
+  display: flex;
+  align-items: center;
+  margin-bottom: 16px;
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+  transition: transform 0.2s ease;
+  padding: 12px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid var(--border-color);
+}
+
+.modal-feature:hover {
+  transform: translateX(8px);
+  background: rgba(255, 255, 255, 0.05);
+  border-color: var(--hover-border);
+}
+
+.modal-actions {
+  display: flex;
+  gap: 20px;
+}
+
+.get-started-button,
+.contact-sales-button {
+  flex: 1;
+  padding: 18px;
+  border-radius: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 1.1rem;
+  position: relative;
+  overflow: hidden;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.get-started-button::before,
+.contact-sales-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(120deg,
+    transparent,
+    rgba(255, 255, 255, 0.2),
+    transparent
+  );
+  transition: 0.6s;
+}
+
+.get-started-button:hover::before,
+.contact-sales-button:hover::before {
+  left: 100%;
+}
+
+.get-started-button:hover,
+.contact-sales-button:hover {
+  transform: translateY(-2px);
+}
+
+.contact-sales-button {
+  background: transparent;
+  border: 2px solid;
+}
+
+/* Tier-specific modal buttons */
+.modal-content.free .get-started-button {
+  background: linear-gradient(to right, var(--free-gradient-start), var(--free-gradient-end));
+  box-shadow: 0 4px 15px var(--free-glow);
+}
+.modal-content.free .contact-sales-button {
+  border-color: var(--free-gradient-start);
+  color: var(--free-gradient-start);
+}
+.modal-content.free .contact-sales-button:hover {
+  background: linear-gradient(to right, var(--free-gradient-start), var(--free-gradient-end));
+  color: white;
+}
+
+.modal-content.lite .get-started-button {
+  background: linear-gradient(to right, var(--lite-gradient-start), var(--lite-gradient-end));
+  box-shadow: 0 4px 15px var(--lite-glow);
+}
+.modal-content.lite .contact-sales-button {
+  border-color: var(--lite-gradient-start);
+  color: var(--lite-gradient-start);
+}
+.modal-content.lite .contact-sales-button:hover {
+  background: linear-gradient(to right, var(--lite-gradient-start), var(--lite-gradient-end));
+  color: white;
+}
+
+.modal-content.premium .get-started-button {
+  background: linear-gradient(to right, var(--premium-gradient-start), var(--premium-gradient-end));
+  box-shadow: 0 4px 15px var(--premium-glow);
+}
+.modal-content.premium .contact-sales-button {
+  border-color: var(--premium-gradient-start);
+  color: var(--premium-gradient-start);
+}
+.modal-content.premium .contact-sales-button:hover {
+  background: linear-gradient(to right, var(--premium-gradient-start), var(--premium-gradient-end));
+  color: white;
+}
+
+.modal-content.enterprise .get-started-button {
+  background: linear-gradient(to right, var(--enterprise-gradient-start), var(--enterprise-gradient-end));
+  box-shadow: 0 4px 15px var(--enterprise-glow);
+}
+.modal-content.enterprise .contact-sales-button {
+  border-color: var(--enterprise-gradient-start);
+  color: var(--enterprise-gradient-start);
+}
+.modal-content.enterprise .contact-sales-button:hover {
+  background: linear-gradient(to right, var(--enterprise-gradient-start), var(--enterprise-gradient-end));
+  color: white;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .pricing-container {
+    grid-template-columns: 1fr;
+    max-width: 400px;
+    margin: 0 auto;
+  }
+
+  .pricing-container .enterprise {
+    grid-column: auto;
+  }
+
+  .pricing-container .enterprise .features {
+    grid-template-columns: 1fr;
+  }
+
+  .pricing-container .enterprise .card-header {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .modal-actions {
+    flex-direction: column;
+  }
+
+  .pricing-header h1 {
+    font-size: 2.5rem;
+  }
+
+  .modal-content {
+    padding: 32px;
+  }
+
+  .pricing-card.premium {
+    transform: scale(1);
+  }
+
+  .pricing-card.premium:hover {
+    transform: translateY(-10px) scale(1.02);
+  }
+}
+.payment-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.payment-modal-content {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  width: 400px;
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.payment-modal-content h2 {
+  margin-bottom: 10px;
+}
+
+.payment-modal-content form {
+  margin-top: 20px;
+}
+
+.payment-modal-content button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.payment-modal-content button:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+}
+
+.close-button {
+  margin-top: 10px;
+  background: transparent;
+  border: none;
+  color: #007bff;
+  cursor: pointer;
+}

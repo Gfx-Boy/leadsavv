@@ -1,0 +1,1138 @@
+:root {
+    --primary-color: #3b82f6;
+    --bg-color: #111827;
+    --secondary-bg: #1f2937;
+    --border-color: #374151;
+    --text-color: #f3f4f6;
+    --text-secondary: #9ca3af;
+    --hover-bg: #2d3748;
+    --active-nav-bg: rgba(59, 130, 246, 0.1);
+  }
+  
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.5;
+  }
+  
+  .container {
+    display: flex;
+    height: 100vh;
+  }
+  
+  .sidebar-container {
+    width: 250px;
+    background-color: var(--secondary-bg);
+    position: fixed;
+    height: 100%;
+    overflow-y: auto;
+    transition: transform 0.3s ease;
+  }
+  
+  .sidebar-open .sidebar-container {
+    transform: translateX(0);
+  }
+  
+  .main-content {
+    flex-grow: 1; /* Adjust this value to match the sidebar width */
+    padding: 1rem;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    overflow-y: auto; /* Make the main content scrollable */
+    height: 100vh; /* Ensure it takes the full height */
+  }
+  
+  .top-nav {
+    background-color: var(--secondary-bg);
+    border-bottom: 1px solid var(--border-color);
+    padding: 0.5rem 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 250px; /* Adjust this value to account for the sidebar width */
+    width: calc(100% - 250px); /* Adjust this value to account for the sidebar width */
+    z-index: 1000;
+  }
+  
+  .nav-items {
+    display: flex;
+    gap: 0.5rem;
+  }
+  
+  .nav-item {
+    padding: 0.5rem 1rem;
+    border: none;
+    background: none;
+    color: var(--text-secondary);
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 0.875rem;
+  }
+  
+  .nav-item:hover {
+    background-color: var(--hover-bg);
+  }
+  
+  .nav-item.active {
+    color: var(--primary-color);
+    background-color: var(--active-nav-bg);
+  }
+  
+  .settings-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.25rem;
+    color: var(--text-secondary);
+  }
+  
+
+  @media (max-width: 768px) {
+    .container {
+      flex-direction: column;
+    }
+    .sidebar-container {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 100%;
+      transform: translateX(-100%);
+    }
+    .sidebar-open .sidebar-container {
+      transform: translateX(0);
+    }
+    .main-content {
+      margin-left: 0;
+    }
+    .top-nav {
+      left: 0;
+      width: 100%;
+    }
+  }:root {
+    --primary-color: #3b82f6;
+    --bg-color: #111827;
+    --secondary-bg: #1f2937;
+    --border-color: #374151;
+    --text-color: #f3f4f6;
+    --text-secondary: #9ca3af;
+    --hover-bg: #2d3748;
+    --table-header-bg: #1f2937;
+    --table-row-hover: #2d3748;
+    --input-bg: #1f2937;
+    --button-hover: #4b5563;
+    --active-nav-bg: rgba(59, 130, 246, 0.1);
+  }
+  
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.5;
+  }
+  
+  .contact {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+  
+  .top-nav {
+    background-color: var(--secondary-bg);
+    border-bottom: 1px solid var(--border-color);
+    padding: 0.5rem 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+  }
+  
+  .nav-items {
+    display: flex;
+    gap: 0.5rem;
+  }
+  
+  .nav-item {
+    padding: 0.5rem 1rem;
+    border: none;
+    background: none;
+    color: var(--text-secondary);
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 0.875rem;
+  }
+  
+  .nav-item:hover {
+    background-color: var(--hover-bg);
+  }
+  
+  .nav-item.active {
+    color: var(--primary-color);
+    background-color: var(--active-nav-bg);
+  }
+  
+  .settings-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.25rem;
+    color: var(--text-secondary);
+  }
+  
+  .main-content {
+    flex: 1;
+    padding: 1rem;
+    padding-top: 4rem; /* Add padding to prevent content from being hidden behind the fixed navbar */
+  }
+  
+  .page-content {
+    background-color: var(--secondary-bg);
+    border-radius: 8px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  }
+  
+  .toolbar {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.75rem;
+    border-bottom: 1px solid var(--border-color);
+  }
+  
+  .left-tools, .right-tools {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+  }
+  
+  .tool-btn {
+    padding: 0.25rem 0.5rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+    color: var(--text-secondary);
+    transition: all 0.2s;
+  }
+  
+  .tool-btn:hover {
+    background-color: var(--hover-bg);
+    color: var(--text-color);
+  }
+  
+  .search-input {
+    padding: 0.375rem 0.75rem;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    min-width: 200px;
+    background-color: var(--input-bg);
+    color: var(--text-color);
+  }
+  
+  .search-input::placeholder {
+    color: var(--text-secondary);
+  }
+  
+  .columns-btn, .filters-btn {
+    padding: 0.375rem 0.75rem;
+    background-color: var(--input-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    cursor: pointer;
+    color: var(--text-color);
+  }
+  
+  .contacts-table {
+    width: 100%;
+  }
+  
+  .table-header {
+    display: grid;
+    grid-template-columns: 40px 2fr 1fr 2fr 1fr 1fr;
+    padding: 0.75rem;
+    background-color: var(--table-header-bg);
+    border-bottom: 1px solid var(--border-color);
+    font-weight: 500;
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+  }
+  
+  .table-row {
+    display: grid;
+    grid-template-columns: 40px 2fr 1fr 2fr 1fr 1fr;
+    padding: 0.75rem;
+    border-bottom: 1px solid var(--border-color);
+    align-items: center;
+  }
+  
+  .table-row:hover {
+    background-color: var(--table-row-hover);
+  }
+  
+  .name-cell {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+  
+  .avatar {
+    width: 32px;
+    height: 32px;
+    background-color: var(--hover-bg);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 500;
+    color: var(--text-color);
+  }
+  
+  .contact-info {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .contact-name {
+    font-weight: 500;
+    color: var(--text-color);
+  }
+  
+  .contact-company {
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+  }
+  
+  /* Bulk Actions Page */
+  .bulk-actions-header {
+    padding: 1rem;
+    border-bottom: 1px solid var(--border-color);
+  }
+  
+  .filters {
+    display: flex;
+    gap: 1rem;
+  }
+  
+  .filter-select {
+    padding: 0.375rem 0.75rem;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    background-color: var(--input-bg);
+    color: var(--text-color);
+  }
+  
+  /* Tasks Page */
+  .tasks-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    border-bottom: 1px solid var(--border-color);
+  }
+  
+  .new-task-btn {
+    padding: 0.5rem 1rem;
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .tasks-filters {
+    display: flex;
+    gap: 1rem;
+    padding: 1rem;
+    border-bottom: 1px solid var(--border-color);
+  }
+  
+  .task-search {
+    padding: 0.375rem 0.75rem;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    background-color: var(--input-bg);
+    color: var(--text-color);
+  }
+  
+  .task-filter {
+    padding: 0.375rem 0.75rem;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    background-color: var(--input-bg);
+    color: var(--text-color);
+  }
+  
+  /* Companies Page */
+  .companies-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    border-bottom: 1px solid var(--border-color);
+  }
+  
+  .company-count {
+    color: var(--text-secondary);
+  }
+  
+  .add-company-btn {
+    padding: 0.5rem 1rem;
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-left: auto;
+  }
+  
+  .companies-filters {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    border-bottom: 1px solid var(--border-color);
+  }
+  
+  .advanced-filters {
+    display: flex;
+    gap: 0.5rem;
+  }
+  
+  /* Checkbox styling */
+  input[type="checkbox"] {
+    width: 16px;
+    height: 16px;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    background-color: var(--input-bg);
+    cursor: pointer;
+  }
+  
+  input[type="checkbox"]:checked {
+    background-color: var (--primary-color);
+    border-color: var(--primary-color);
+  }
+  
+  /* Date input styling */
+  input[type="date"] {
+    padding: 0.375rem 0.75rem;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    background-color: var(--input-bg);
+    color: var(--text-color);
+  }
+  :root {
+  --primary-color: #3b82f6;
+  --bg-color: #111827;
+  --secondary-bg: #1f2937;
+  --border-color: #374151;
+  --text-color: #f3f4f6;
+  --text-secondary: #9ca3af;
+  --hover-bg: #2d3748;
+  --active-nav-bg: rgba(59, 130, 246, 0.1);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  line-height: 1.5;
+}
+
+.contact {
+  display: flex;
+  min-height: 100vh;
+  width: 100vw; /* Ensure it takes the full width */
+}
+
+.sidebar-container {
+  width: 250px;
+  background-color: var(--secondary-bg);
+  position: fixed;
+  height: 100%;
+  overflow-y: auto;
+  transition: transform 0.3s ease;
+}
+
+.sidebar-open {
+  transform: translateX(0);
+}
+
+.main-content {
+  flex: 1; /* Adjust this value to match the sidebar width */
+  padding: 1rem;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  overflow-y: auto; /* Make the main content scrollable */
+  height: 100vh; /* Ensure it takes the full height */
+}
+
+.top-nav {
+  background-color: var(--secondary-bg);
+  border-bottom: 1px solid var(--border-color);
+  padding: 0.5rem 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  width: calc(100% - 250px); /* Adjust this value to account for the sidebar width */
+  z-index: 1000;
+}
+
+.nav-items {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.nav-item {
+  padding: 0.5rem 1rem;
+  border: none;
+  background: none;
+  color: var(--text-secondary);
+  cursor: pointer;
+  border-radius: 4px;
+  font-size: 0.875rem;
+}
+
+.nav-item:hover {
+  background-color: var(--hover-bg);
+}
+
+.nav-item.active {
+  color: var(--primary-color);
+  background-color: var(--active-nav-bg);
+}
+
+.settings-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.25rem;
+  color: var(--text-secondary);
+}
+
+.main-content {
+  flex: 1;
+  padding: 1rem;
+  padding-top: 4rem; /* Add padding to prevent content from being hidden behind the fixed navbar */
+}
+
+.page-content {
+  background-color: var(--secondary-bg);
+  border-radius: 8px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+@media (min-width: 1024px) {
+  .lg-hidden {
+    display: none;
+  }
+  
+  .lg-ml-64 {
+    margin-left: 16rem;
+  }
+  
+  .lg-translate-x-0 {
+    transform: translateX(0);
+  }
+}
+
+/* Additional styles for focus states */
+.focus-ring:focus {
+  --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
+  --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(3px + var(--tw-ring-offset-width)) var(--tw-ring-color);
+  box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);
+}
+
+.focus-ring-2:focus {
+  --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
+  --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color);
+  box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);
+}
+
+.focus-ring-blue-500:focus {
+  --tw-ring-color: #3b82f6;
+}
+
+.focus-ring-opacity-50:focus {
+  --tw-ring-opacity: 0.5;
+}
+:root {
+    --primary-color: #3b82f6;
+    --bg-color: #111827;
+    --secondary-bg: #1f2937;
+    --border-color: #374151;
+    --text-color: #f3f4f6;
+    --text-secondary: #9ca3af;
+    --hover-bg: #2d3748;
+    --active-nav-bg: rgba(59, 130, 246, 0.1);
+  }
+  
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.5;
+  }
+  
+  .contact {
+    display: flex;
+    min-height: 100vh;
+    width: 100vw; /* Ensure it takes the full width */
+  }
+  
+  .sidebar-container {
+    width: 250px;
+    background-color: var(--secondary-bg);
+    position: fixed;
+    height: 100%;
+    overflow-y: auto;
+    transition: transform 0.3s ease;
+  }
+  
+  .sidebar-open {
+    transform: translateX(0);
+  }
+  
+  .main-content {
+    flex: 1; /* Adjust this value to match the sidebar width */
+    padding: 1rem;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    overflow-y: auto; /* Make the main content scrollable */
+    height: 100vh; /* Ensure it takes the full height */
+  }
+  
+  .top-nav {
+    background-color: var(--secondary-bg);
+    border-bottom: 1px solid var(--border-color);
+    padding: 0.5rem 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 250px; /* Adjust this value to account for the sidebar width */
+    width: calc(100% - 250px); /* Adjust this value to account for the sidebar width */
+    z-index: 1000;
+  }
+  
+  .nav-items {
+    display: flex;
+    gap: 0.5rem;
+  }
+  
+  .nav-item {
+    padding: 0.5rem 1rem;
+    border: none;
+    background: none;
+    color: var(--text-secondary);
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 0.875rem;
+  }
+  
+  .nav-item:hover {
+    background-color: var(--hover-bg);
+  }
+  
+  .nav-item.active {
+    color: var(--primary-color);
+    background-color: var(--active-nav-bg);
+  }
+  
+  .settings-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.25rem;
+    color: var(--text-secondary);
+  }
+  
+  .main-content {
+    flex: 1;
+    padding: 1rem;
+    padding-top: 4rem; /* Add padding to prevent content from being hidden behind the fixed navbar */
+  }
+  
+  .page-content {
+    background-color: var(--secondary-bg);
+    border-radius: 8px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  }
+  
+  @media (min-width: 1024px) {
+    .lg-hidden {
+      display: none;
+    }
+    
+    .lg-ml-64 {
+      margin-left: 16rem;
+    }
+    
+    .lg-translate-x-0 {
+      transform: translateX(0);
+    }
+  }
+  
+  /* Additional styles for focus states */
+  .focus-ring:focus {
+    --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
+    --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(3px + var(--tw-ring-offset-width)) var(--tw-ring-color);
+    box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);
+  }
+  
+  .focus-ring-2:focus {
+    --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
+    --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color);
+    box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);
+  }
+  
+  .focus-ring-blue-500:focus {
+    --tw-ring-color: #3b82f6;
+  }
+  
+  .focus-ring-opacity-50:focus {
+    --tw-ring-opacity: 0.5;
+  }
+  :root {
+  --primary-color: #3b82f6;
+  --bg-color: #111827;
+  --secondary-bg: #1f2937;
+  --border-color: #374151;
+  --text-color: #f3f4f6;
+  --text-secondary: #9ca3af;
+  --hover-bg: #2d3748;
+  --active-nav-bg: rgba(59, 130, 246, 0.1);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  line-height: 1.5;
+}
+
+.contact {
+  display: flex;
+  min-height: 100vh;
+  width: 100vw; /* Ensure it takes the full width */
+}
+
+.sidebar-container {
+  width: 250px;
+  background-color: var(--secondary-bg);
+  position: fixed;
+  height: 100%;
+  overflow-y: auto;
+  overflow-x: hidden; /* Prevent horizontal scrolling */
+  transition: transform 0.3s ease;
+}
+
+.sidebar-open {
+  transform: translateX(0);
+}
+
+.main-content {
+  flex: 1; /* Adjust this value to match the sidebar width */
+  padding: 1rem;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  overflow-y: auto; /* Make the main content scrollable */
+  height: 100vh; /* Ensure it takes the full height */
+}
+
+.top-nav {
+  background-color: var(--secondary-bg);
+  border-bottom: 1px solid var(--border-color);
+  padding: 0.5rem 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 250px; /* Adjust this value to account for the sidebar width */
+  width: calc(100% - 250px); /* Adjust this value to account for the sidebar width */
+  z-index: 1000;
+}
+
+.nav-items {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.nav-item {
+  padding: 0.5rem 1rem;
+  border: none;
+  background: none;
+  color: var(--text-secondary);
+  cursor: pointer;
+  border-radius: 4px;
+  font-size: 0.875rem;
+}
+
+.nav-item:hover {
+  background-color: var(--hover-bg);
+}
+
+.nav-item.active {
+  color: var(--primary-color);
+  background-color: var(--active-nav-bg);
+}
+
+.settings-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.25rem;
+  color: var(--text-secondary);
+}
+
+.main-content {
+  flex: 1;
+  padding: 1rem;
+  padding-top: 4rem; /* Add padding to prevent content from being hidden behind the fixed navbar */
+}
+
+.page-content {
+  background-color: var(--secondary-bg);
+  border-radius: 8px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+@media (min-width: 1024px) {
+  .lg-hidden {
+    display: none;
+  }
+  
+  .lg-ml-64 {
+    margin-left: 16rem;
+  }
+  
+  .lg-translate-x-0 {
+    transform: translateX(0);
+  }
+}
+
+/* Additional styles for focus states */
+.focus-ring:focus {
+  --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
+  --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(3px + var(--tw-ring-offset-width)) var(--tw-ring-color);
+  box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);
+}
+
+.focus-ring-2:focus {
+  --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
+  --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color);
+  box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);
+}
+
+.focus-ring-blue-500:focus {
+  --tw-ring-color: #3b82f6;
+}
+
+.focus-ring-opacity-50:focus {
+  --tw-ring-opacity: 0.5;
+}
+:root {
+    --primary-color: #3b82f6;
+    --bg-color: #111827;
+    --secondary-bg: #1f2937;
+    --border-color: #374151;
+    --text-color: #f3f4f6;
+    --text-secondary: #9ca3af;
+    --hover-bg: #2d3748;
+    --active-nav-bg: rgba(59, 130, 246, 0.1);
+  }
+  
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.5;
+  }
+  
+  .container {
+    display: flex;
+    height: 100vh;
+  }
+  
+  .sidebar-container {
+    width: 250px;
+    background-color: var(--secondary-bg);
+    position: fixed;
+    height: 100%;
+    overflow-y: auto;
+    transition: transform 0.3s ease;
+  }
+  
+  .sidebar-open .sidebar-container {
+    transform: translateX(0);
+  }
+  
+  .main-content {
+    flex-grow: 1; /* Adjust this value to match the sidebar width */
+    padding: 1rem;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    overflow-y: auto; /* Make the main content scrollable */
+    height: 100vh; /* Ensure it takes the full height */
+  }
+  
+  .top-nav {
+    background-color: var(--secondary-bg);
+    border-bottom: 1px solid var(--border-color);
+    padding: 0.5rem 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 250px; /* Adjust this value to account for the sidebar width */
+    width: calc(100% - 250px); /* Adjust this value to account for the sidebar width */
+    z-index: 1000;
+  }
+  
+  .nav-items {
+    display: flex;
+    gap: 0.5rem;
+  }
+  
+  .nav-item {
+    padding: 0.5rem 1rem;
+    border: none;
+    background: none;
+    color: var(--text-secondary);
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 0.875rem;
+  }
+  
+  .nav-item:hover {
+    background-color: var(--hover-bg);
+  }
+  
+  .nav-item.active {
+    color: var(--primary-color);
+    background-color: var(--active-nav-bg);
+  }
+  
+  .settings-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.25rem;
+    color: var(--text-secondary);
+  }
+
+  
+  @media (max-width: 768px) {
+    .container {
+      flex-direction: column;
+    }
+    .sidebar-container {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 100%;
+      transform: translateX(-100%);
+    }
+    .sidebar-open .sidebar-container {
+      transform: translateX(0);
+    }
+    .main-content {
+      margin-left: 0;
+    }
+    .top-nav {
+      left: 0;
+      width: 100%;
+    }
+  }
+  
+  :root {
+    --primary-color: #3b82f6;
+    --bg-color: #111827;
+    --secondary-bg: #1f2937;
+    --border-color: #374151;
+    --text-color: #f3f4f6;
+    --text-secondary: #9ca3af;
+    --hover-bg: #2d3748;
+    --active-nav-bg: rgba(59, 130, 246, 0.1);
+  }
+  
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.5;
+  }
+  
+  .container {
+    display: flex;
+    height: 100vh;
+  }
+  
+  .sidebar-container {
+    width: 250px;
+    background-color: var(--secondary-bg);
+    position: fixed;
+    height: 100%;
+    overflow-y: auto;
+    transition: transform 0.3s ease;
+  }
+  
+  .sidebar-open .sidebar-container {
+    transform: translateX(0);
+  }
+  
+  .main-content {
+    flex-grow: 1;/* Adjust this value to match the sidebar width */
+    padding: 1rem;
+    padding-top: 4rem; /* Add padding to prevent content from being hidden behind the fixed navbar */
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    overflow-y: auto; /* Make the main content scrollable */
+    height: 100vh; /* Ensure it takes the full height */
+  }
+  
+  .top-nav {
+    background-color: var(--secondary-bg);
+    border-bottom: 1px solid var(--border-color);
+    padding: 0.5rem 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 250px; /* Adjust this value to account for the sidebar width */
+    width: calc(100% - 250px); /* Adjust this value to account for the sidebar width */
+    z-index: 1000;
+  }
+  
+  .nav-items {
+    display: flex;
+    gap: 0.5rem;
+  }
+  
+  .nav-item {
+    padding: 0.5rem 1rem;
+    border: none;
+    background: none;
+    color: var(--text-secondary);
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 0.875rem;
+  }
+  
+  .nav-item:hover {
+    background-color: var(--hover-bg);
+  }
+  
+  .nav-item.active {
+    color: var(--primary-color);
+    background-color: var(--active-nav-bg);
+  }
+  
+  .settings-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.25rem;
+    color: var(--text-secondary);
+  }
+  .popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+  
+  .popup-content {
+    background: var(--secondary-bg);
+    padding: 2rem;
+    border-radius: 8px;
+    position: relative;
+    columns: 2;
+  }
+  
+  .close-popup {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    color: var(--text-color);
+    font-size: 1.5rem;
+    cursor: pointer;
+  }
+
+.page-content{
+  margin-top: 100px;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+/* Add this CSS to your stylesheet */
+.form-row {
+  display: flex;
+  justify-content: space-between;
+}
+
+.form-group {
+  flex: 0 0 48%;
+  margin-bottom: 1rem;
+}
+.company-stuff{
+  columns: 2;
+}

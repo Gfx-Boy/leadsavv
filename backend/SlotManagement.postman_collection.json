@@ -1,0 +1,112 @@
+{
+  "info": {
+    "name": "Slot Management",
+    "description": "API endpoints for managing slots",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Create Slot",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"slot_time\": \"10:00 AM\",\n  \"slot_date\": \"2023-10-30\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:5000/api/slots",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5000",
+          "path": [
+            "api",
+            "slots"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Get Slot by ID",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "http://localhost:5000/api/slots/:id",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5000",
+          "path": [
+            "api",
+            "slots",
+            ":id"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Get All Slots",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "http://localhost:5000/api/slots",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5000",
+          "path": [
+            "api",
+            "slots"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Update Slot by ID",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"slot_time\": \"11:00 AM\",\n  \"slot_date\": \"2023-10-31\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:5000/api/slots/:id",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5000",
+          "path": [
+            "api",
+            "slots",
+            ":id"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Delete Slot by ID",
+      "request": {
+        "method": "DELETE",
+        "url": {
+          "raw": "http://localhost:5000/api/slots/:id",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5000",
+          "path": [
+            "api",
+            "slots",
+            ":id"
+          ]
+        }
+      }
+    }
+  ]
+}
