@@ -19,7 +19,7 @@ function ProfileSettings() {
   useEffect(() => {
     const fetchMyProfile = async () => {
       try {
-        const response = await axios.get('http://31.97.41.27:5005/api/users/profile', {
+        const response = await axios.get('https://api.leadsavvyai.com/api/users/profile', {
           headers: { Authorization: `Bearer ${sessionStorage.getItem('token')}` },
         });
         const profile = response.data;
@@ -48,7 +48,7 @@ function ProfileSettings() {
     e.preventDefault();
     try {
       const response = await axios.put(
-        'http://31.97.41.27:5005/api/users/profile',
+        'https://api.leadsavvyai.com/api/users/profile',
         {
           firstName: formData.firstName,
           lastName: formData.lastName,
@@ -89,7 +89,7 @@ function ProfileSettings() {
 
     try {
       const response = await axios.put(
-        'http://31.97.41.27:5005/api/users/change-password',
+        'https://api.leadsavvyai.com/api/users/change-password',
         {
           currentPassword: formData.currentPassword,
           newPassword: formData.newPassword,
@@ -134,7 +134,7 @@ function ProfileSettings() {
     }
 
     try {
-      const response = await axios.delete('http://31.97.41.27:5005/api/delete-account', {
+      const response = await axios.delete('https://api.leadsavvyai.com/api/delete-account', {
         headers: {
           Authorization: `Bearer ${sessionStorage.getItem('token')}`,
         },

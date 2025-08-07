@@ -14,7 +14,7 @@ function Dashboard() {
         const token = sessionStorage.getItem('token'); // Get the token from sessionStorage
         const headers = { Authorization: `Bearer ${token}` };
 
-        const response = await axios.get('http://31.97.41.27:5005/api/campaigns', { headers });
+        const response = await axios.get('https://api.leadsavvyai.com/api/campaigns', { headers });
         setCampaigns(response.data);
 
         // Calculate campaign statistics

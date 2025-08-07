@@ -8,7 +8,7 @@ function CsvHistory() {
   const fetchCSVHistory = async () => {
     try {
       const token = sessionStorage.getItem('token'); // Get token from sessionStorage
-      const response = await axios.get('http://31.97.41.27:5005/api/history', {
+      const response = await axios.get('https://api.leadsavvyai.com/api/history', {
         headers: {
           Authorization: `Bearer ${token}`, // Add token to headers
         },
@@ -27,7 +27,7 @@ function CsvHistory() {
     const token = sessionStorage.getItem('token');
     const encodedFilename = encodeURIComponent(filename); // Encode the filename
     axios({
-      url: `http://31.97.41.27:5005/api/download/${encodedFilename}`, // Use the encoded filename
+      url: `https://api.leadsavvyai.com/api/download/${encodedFilename}`, // Use the encoded filename
       method: 'GET',
       headers: {
         Authorization: `Bearer ${token}`,
@@ -55,7 +55,7 @@ function CsvHistory() {
   const deleteFile = async (filename) => {
     const token = sessionStorage.getItem('token');
     try {
-      await axios.delete(`http://31.97.41.27:5005/api/delete/${filename}`, {
+      await axios.delete(`https://api.leadsavvyai.com/api/delete/${filename}`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -70,7 +70,7 @@ function CsvHistory() {
   const viewFile = (filename) => {
     const token = sessionStorage.getItem('token');
     const encodedFilename = encodeURIComponent(filename);
-    const url = `http://31.97.41.27:5005/api/view/${encodedFilename}`;
+    const url = `https://api.leadsavvyai.com/api/view/${encodedFilename}`;
 
     window.open(url, '_blank');
   };

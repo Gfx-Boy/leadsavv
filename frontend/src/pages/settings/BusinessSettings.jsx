@@ -14,7 +14,7 @@ function BusinessSettings() {
   useEffect(() => {
     const fetchBusinessProfile = async () => {
       try {
-        const response = await axios.get('http://31.97.41.27:5005/api/business-profile', {
+        const response = await axios.get('https://api.leadsavvyai.com/api/business-profile', {
           headers: { Authorization: `Bearer ${sessionStorage.getItem('token')}` },
         });
         const profile = response.data;
@@ -42,7 +42,7 @@ function BusinessSettings() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.put('http://31.97.41.27:5005/api/business-profile', formData, {
+      const response = await axios.put('https://api.leadsavvyai.com/api/business-profile', formData, {
         headers: {
           'Content-Type': 'application/json',
           Authorization: `Bearer ${sessionStorage.getItem('token')}`,

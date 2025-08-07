@@ -39,7 +39,7 @@ const [plans, setPlans] = useState([
   };
   // Create axios instance with token from localStorage
   const axiosInstance = axios.create({
-    baseURL: 'http://31.97.41.27:5005/api',
+    baseURL: 'https://api.leadsavvyai.com/api',
   });
 
   // Add a request interceptor to include the token in every request

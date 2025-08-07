@@ -11,7 +11,7 @@ function ExportManager() {
     const fetchExports = async () => {
       try {
         const token = sessionStorage.getItem('token'); // Get token from sessionStorage
-        const response = await axios.get('http://31.97.41.27:5005/api/export-manager', {
+        const response = await axios.get('https://api.leadsavvyai.com/api/export-manager', {
           headers: {
             Authorization: `Bearer ${token}`, // Add token to headers
           },

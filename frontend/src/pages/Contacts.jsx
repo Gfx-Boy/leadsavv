@@ -26,7 +26,7 @@ export function Contacts() {
     const fetchContacts = async () => {
       try {
         const token = getToken();
-        const response = await axios.get("http://31.97.41.27:5005/api/contacts", {
+        const response = await axios.get("https://api.leadsavvyai.com/api/contacts", {
           headers: { Authorization: `Bearer ${token}` },
         });
 
@@ -77,7 +77,7 @@ export function Contacts() {
     e.preventDefault();
     try {
       const token = getToken();
-      const response = await axios.post("http://31.97.41.27:5005/api/contacts", newContact, {
+      const response = await axios.post("https://api.leadsavvyai.com/api/contacts", newContact, {
         headers: { Authorization: `Bearer ${token}` },
       });
       setContacts([...contacts, response.data]);
@@ -97,7 +97,7 @@ export function Contacts() {
   const handleDeleteContact = async (id) => {
     try {
       const token = getToken();
-      await axios.delete(`http://31.97.41.27:5005/api/contacts/${id}`, {
+      await axios.delete(`https://api.leadsavvyai.com/api/contacts/${id}`, {
         headers: { Authorization: `Bearer ${token}` },
       });
       setContacts(contacts.filter((contact) => contact._id !== id));
@@ -117,7 +117,7 @@ export function Contacts() {
       const token = getToken();
       await Promise.all(
         selectedContacts.map((id) =>
-          axios.delete(`http://31.97.41.27:5005/api/contacts/${id}`, {
+          axios.delete(`https://api.leadsavvyai.com/api/contacts/${id}`, {
             headers: { Authorization: `Bearer ${token}` },
           })
         )

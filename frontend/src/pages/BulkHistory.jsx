@@ -10,7 +10,7 @@ export function BulkHistory() {
     const fetchImportHistory = async () => {
       try {
         const token = sessionStorage.getItem('token'); // Get the token from sessionStorage
-        const response = await axios.get('http://31.97.41.27:5005/api/import/history', {
+        const response = await axios.get('https://api.leadsavvyai.com/api/import/history', {
           headers: {
             Authorization: `Bearer ${token}`, // Add token to headers
           },

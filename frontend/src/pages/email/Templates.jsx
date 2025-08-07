@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router-dom'; // Import useNavigate
 
 // Create an axios instance with base URL and token interceptor
 const instance = axios.create({
-  baseURL: 'http://31.97.41.27:5005/api',
+  baseURL: 'https://api.leadsavvyai.com/api',
   headers: {
     'Content-Type': 'application/json',
   },

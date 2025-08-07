@@ -23,7 +23,7 @@ export default function SaveTemplateFeature() {
     }
 
     try {
-      const response = await fetch('http://31.97.41.27:5005/api/templates', {
+      const response = await fetch('https://api.leadsavvyai.com/api/templates', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

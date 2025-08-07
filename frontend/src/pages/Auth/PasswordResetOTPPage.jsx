@@ -35,7 +35,7 @@ export function PasswordResetOTPPage() {
       // Debugging: Log the request body
       console.log("Request body:", { email, verificationCode: code });
 
-      const response = await axios.post("http://31.97.41.27:5005/api/verify-code", {
+      const response = await axios.post("https://api.leadsavvyai.com/api/verify-code", {
         email: email, // Ensure this is not undefined
         verificationCode: code, // Ensure this matches the backend field name
       });

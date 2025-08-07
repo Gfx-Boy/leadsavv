@@ -33,7 +33,7 @@ function Scraper() {
     const fetchCSVHistory = async () => {
       try {
         const token = sessionStorage.getItem('token'); // Get token from sessionStorage
-        const response = await axios.get('http://31.97.41.27:5005/api/history', {
+        const response = await axios.get('https://api.leadsavvyai.com/api/history', {
           headers: {
             Authorization: `Bearer ${token}`, // Add token to headers
           },
@@ -57,7 +57,7 @@ function Scraper() {
     try {
       const token = sessionStorage.getItem('token'); // Get token from sessionStorage
       const response = await axios.post(
-        'http://31.97.41.27:5005/api/scrape',
+        'https://api.leadsavvyai.com/api/scrape',
         formData,
         {
           headers: {
@@ -87,7 +87,7 @@ function Scraper() {
     try {
       const token = sessionStorage.getItem('token'); // Get token from sessionStorage
       const response = await axios.post(
-        'http://31.97.41.27:5005/api/export',
+        'https://api.leadsavvyai.com/api/export',
         { results: customResults },
         {
           headers: {
@@ -141,7 +141,7 @@ function Scraper() {
   const handleDeleteFromHistory = async (id) => {
     try {
       const token = sessionStorage.getItem('token'); // Get token from sessionStorage
-      await axios.delete(`http://31.97.41.27:5005/api/scrapehistory/${id}`, {
+      await axios.delete(`https://api.leadsavvyai.com/api/scrapehistory/${id}`, {
         headers: {
           Authorization: `Bearer ${token}`, // Add token to headers
         },

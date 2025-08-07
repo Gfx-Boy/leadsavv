@@ -20,7 +20,7 @@ function Pipelines() {
         const token = sessionStorage.getItem('token'); // Get the token from sessionStorage
         const headers = { Authorization: `Bearer ${token}` };
 
-        const response = await axios.get('http://31.97.41.27:5005/api/pipelines', { headers });
+        const response = await axios.get('https://api.leadsavvyai.com/api/pipelines', { headers });
         setPipelines(response.data);
       } catch (error) {
         console.error('Error fetching pipelines:', error);
@@ -41,7 +41,7 @@ function Pipelines() {
       const token = sessionStorage.getItem('token'); // Get the token from sessionStorage
       const headers = { Authorization: `Bearer ${token}` };
 
-      await axios.delete(`http://31.97.41.27:5005/api/pipelines/${_id}`, { headers });
+      await axios.delete(`https://api.leadsavvyai.com/api/pipelines/${_id}`, { headers });
       setPipelines(pipelines.filter((pipeline) => pipeline._id !== _id));
     } catch (error) {
       console.error('Error deleting pipeline:', error);
@@ -97,7 +97,7 @@ function Pipelines() {
         };
 
         // Send the POST request to create a new pipeline
-        const response = await axios.post('http://31.97.41.27:5005/api/pipelines', payload, { headers });
+        const response = await axios.post('https://api.leadsavvyai.com/api/pipelines', payload, { headers });
 
         // Update the pipelines state with the new pipeline
         setPipelines([...pipelines, response.data]);

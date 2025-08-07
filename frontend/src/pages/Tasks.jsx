@@ -29,7 +29,7 @@ const [newDueDate, setNewDueDate] = useState('');
       const headers = { Authorization: `Bearer ${token}` };
 
       try {
-        const response = await axios.get('http://31.97.41.27:5005/api/tasks', { headers });
+        const response = await axios.get('https://api.leadsavvyai.com/api/tasks', { headers });
         setTasks(response.data);
         setFilteredTasks(response.data); // Initialize filtered tasks
         setLoading(false);
@@ -46,7 +46,7 @@ const [newDueDate, setNewDueDate] = useState('');
     const headers = { Authorization: `Bearer ${token}` };
   
     try {
-      await axios.put(`http://31.97.41.27:5005/api/tasks/${taskId}/done`, {}, { headers });
+      await axios.put(`https://api.leadsavvyai.com/api/tasks/${taskId}/done`, {}, { headers });
       setTasks((prevTasks) =>
         prevTasks.map((task) =>
           task._id === taskId ? { ...task, status: 'Completed' } : task
@@ -69,7 +69,7 @@ const [newDueDate, setNewDueDate] = useState('');
   
     try {
       await axios.put(
-        `http://31.97.41.27:5005/api/tasks/${taskId}/due-date`,
+        `https://api.leadsavvyai.com/api/tasks/${taskId}/due-date`,
         { dueDate: newDueDate },
         { headers }
       );
@@ -94,7 +94,7 @@ const [newDueDate, setNewDueDate] = useState('');
     const headers = { Authorization: `Bearer ${token}` };
   
     try {
-      const response = await axios.get('http://31.97.41.27:5005/api/tasks/due-date', { headers });
+      const response = await axios.get('https://api.leadsavvyai.com/api/tasks/due-date', { headers });
       setTasks(response.data);
       setFilteredTasks(response.data);
     } catch (error) {
@@ -121,7 +121,7 @@ const [newDueDate, setNewDueDate] = useState('');
       const headers = { Authorization: `Bearer ${token}`, 'Content-Type': 'application/json' };
   
       try {
-        await axios.put(`http://31.97.41.27:5005/api/tasks/${taskId}/in-progress`, {}, { headers });
+        await axios.put(`https://api.leadsavvyai.com/api/tasks/${taskId}/in-progress`, {}, { headers });
         setTasks((prevTasks) =>
           prevTasks.map((task) =>
             task._id === taskId ? { ...task, status: 'In Progress' } : task
@@ -173,7 +173,7 @@ const [newDueDate, setNewDueDate] = useState('');
     const headers = { Authorization: `Bearer ${token}`, 'Content-Type': 'application/json' };
 
     try {
-      const response = await axios.post('http://31.97.41.27:5005/api/tasks', newTask, { headers });
+      const response = await axios.post('https://api.leadsavvyai.com/api/tasks', newTask, { headers });
       setTasks([...tasks, response.data]); // Add the new task to the list
       setFilteredTasks([...tasks, response.data]); // Update filtered tasks
       setNewTask({
@@ -194,7 +194,7 @@ const [newDueDate, setNewDueDate] = useState('');
     const headers = { Authorization: `Bearer ${token}` };
 
     try {
-      await axios.delete(`http://31.97.41.27:5005/api/tasks/${taskId}`, { headers });
+      await axios.delete(`https://api.leadsavvyai.com/api/tasks/${taskId}`, { headers });
       setTasks((prevTasks) => prevTasks.filter((task) => task._id !== taskId)); // Remove the task from the list
       setFilteredTasks((prevTasks) => prevTasks.filter((task) => task._id !== taskId)); // Update filtered tasks
       alert('Task deleted successfully!');

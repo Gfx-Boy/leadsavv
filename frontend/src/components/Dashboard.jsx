@@ -34,7 +34,7 @@ const Dashboard = () => {
 
         // Fetch scraping history
         const scrapingResponse = await axios.get(
-          "http://31.97.41.27:5005/api/history",
+          "https://api.leadsavvyai.com/api/history",
           { headers }
         );
 
@@ -58,7 +58,7 @@ const Dashboard = () => {
 
         // Fetch contacts added history
         const contactsResponse = await axios.get(
-          "http://31.97.41.27:5005/api/history/contacts",
+          "https://api.leadsavvyai.com/api/history/contacts",
           { headers }
         );
         const totalContacts = contactsResponse.data.reduce(
@@ -75,14 +75,14 @@ const Dashboard = () => {
 
         // Fetch scraping usage
         const scrapingUsageResponse = await axios.get(
-          "http://31.97.41.27:5005/api/dashboard/scraping-usage",
+          "https://api.leadsavvyai.com/api/dashboard/scraping-usage",
           { headers }
         );
         setScrapingUsage(scrapingUsageResponse.data);
 
         // Fetch pipelines
         const pipelinesResponse = await axios.get(
-          "http://31.97.41.27:5005/api/pipelines",
+          "https://api.leadsavvyai.com/api/pipelines",
           { headers }
         );
         setPipelines({
@@ -91,14 +91,14 @@ const Dashboard = () => {
 
         // Fetch upcoming meetings
         const meetingsResponse = await axios.get(
-          "http://31.97.41.27:5005/api/meeting",
+          "https://api.leadsavvyai.com/api/meeting",
           { headers }
         );
         setMeetings(meetingsResponse.data);
 
         // Fetch to-do tasks
         const tasksResponse = await axios.get(
-          "http://31.97.41.27:5005/api/tasks",
+          "https://api.leadsavvyai.com/api/tasks",
           { headers }
         );
         setTasks(tasksResponse.data);

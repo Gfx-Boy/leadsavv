@@ -12,7 +12,7 @@ export function RestoreContacts() {
         const token = sessionStorage.getItem('token'); // Get the token from sessionStorage
         const headers = { Authorization: `Bearer ${token}` }; // Add token to headers
 
-        const response = await axios.get('http://31.97.41.27:5005/api/contacts/deleted', { headers });
+        const response = await axios.get('https://api.leadsavvyai.com/api/contacts/deleted', { headers });
         setDeletedContacts(response.data);
       } catch (error) {
         console.error('Error fetching deleted contacts:', error);
@@ -28,7 +28,7 @@ export function RestoreContacts() {
       const token = sessionStorage.getItem('token'); // Get the token from sessionStorage
       const headers = { Authorization: `Bearer ${token}` }; // Add token to headers
 
-      await axios.patch(`http://31.97.41.27:5005/api/contacts/restore/${id}`, {}, { headers });
+      await axios.patch(`https://api.leadsavvyai.com/api/contacts/restore/${id}`, {}, { headers });
       alert('Contact restored successfully!');
 
       // Remove the restored contact from the list
@@ -45,7 +45,7 @@ export function RestoreContacts() {
       const token = sessionStorage.getItem('token'); // Get the token from sessionStorage
       const headers = { Authorization: `Bearer ${token}` }; // Add token to headers
 
-      await axios.delete(`http://31.97.41.27:5005/api/contacts/permanent/${id}`, { headers });
+      await axios.delete(`https://api.leadsavvyai.com/api/contacts/permanent/${id}`, { headers });
       alert('Contact permanently deleted!');
 
       // Remove the permanently deleted contact from the list
